@@ -1,0 +1,487 @@
+@charset "UTF-8";
+/* Règles de dimensionnement des boîtes */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Retirer les marges par défaut */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Définir les défauts élémentaires du corps */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Retirer les styles de liste sur les éléments ul, ol qui ont un attribut class */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* Les éléments a qui n'ont pas de classes reçoivent les styles par défaut */
+a {
+  text-decoration: none;
+}
+
+/* Rendre l'utilisation d'images plus simple */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Cadence et rythme naturels pour les éléments enfants d'éléments article par défaut */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Hérite les règles typographiques pour les éléments input et button */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Retire toutes les animations et transition pour les personnes qui préfèrent ne pas les voir */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  font-size: 10px;
+}
+@media screen and (min-width: 426px) {
+  :root {
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 769px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+body p {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  grid-area: header;
+}
+
+#first-m {
+  grid-area: first;
+}
+
+footer {
+  grid-area: footer;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr 200px;
+  grid-template-areas: "header" "first" "footer";
+}
+
+img {
+  height: 300px;
+  object-fit: cover;
+}
+
+header {
+  text-align: center;
+}
+
+header a {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  height: 100%;
+}
+
+header h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.8rem;
+  align-self: center;
+}
+
+header .return {
+  position: absolute;
+  left: 25px;
+  align-self: center;
+}
+
+#first-m {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+/*label {
+    display:inline-block;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 4px 10px #d2d2d2;
+    background-color: white;
+    position: relative;
+    text-overflow: ellipsis;
+    @media screen and (min-width: 769px) {
+        height: 65px;
+    }
+}
+label:active{
+    box-shadow: 0 4px 10px hsl(0,0%,75%);
+    opacity: 0.96;
+    transition: 200ms;
+}*/
+.btn-1 {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  grid-template-rows: 50% 50%;
+  grid-template-areas: "titre ." "texte texte2";
+  cursor: pointer;
+  width: 100%;
+  transition: width 300ms;
+  padding: 6px;
+}
+.btn-1 h3 {
+  grid-area: titre;
+  align-self: center;
+}
+.btn-1 .place1 {
+  grid-area: texte;
+}
+.btn-1 .place2 {
+  grid-area: texte2;
+}
+@media screen and (min-width: 426px) {
+  .btn-1 {
+    padding: 8px;
+  }
+}
+@media screen and (min-width: 426px) {
+  .btn-1 {
+    padding: 8px 10px;
+  }
+}
+.btn-1:active {
+  width: calc(100% - 60px);
+}
+
+.place2 {
+  font-weight: bold;
+  justify-self: end;
+  align-self: end;
+}
+
+.place1 {
+  font-weight: 300;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  align-self: center;
+}
+
+#m-card {
+  margin-top: -40px;
+  border-radius: 40px 40px 0 0;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #f8f7f7;
+  justify-content: center;
+}
+
+.plat-p, .dessert-p {
+  margin-top: 25px;
+}
+
+#m-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  position: relative;
+}
+@media screen and (min-width: 769px) {
+  #m-card header {
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-template-areas: ". h1 heart .";
+  }
+  #m-card header h1 {
+    grid-area: h1;
+    position: absolute;
+    left: 0;
+  }
+  #m-card header i {
+    grid-area: heart;
+    position: absolute;
+    right: 0;
+  }
+}
+
+#m-card header h1 {
+  padding: 0;
+}
+
+#m-card h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.entre-p, .plat-p, .dessert-p {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto repeat(3, 55px);
+  grid-gap: 15px;
+  opacity: 0;
+}
+@media screen and (min-width: 769px) {
+  .entre-p, .plat-p, .dessert-p {
+    justify-content: center;
+    grid-template-columns: 80%;
+    grid-template-rows: auto repeat(3, 65px);
+    grid-gap: 20px;
+  }
+}
+
+.underline {
+  padding-bottom: 5px;
+  border-bottom: 3px solid #99E2D0;
+}
+
+@keyframes arrival {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.entre-p {
+  animation: arrival 1s ease-in-out forwards;
+}
+
+.plat-p {
+  animation: arrival 1s 0.5s ease-in-out forwards;
+}
+
+.dessert-p {
+  animation: arrival 1s 1s ease-in-out forwards;
+}
+
+.finish1 {
+  text-align: center;
+}
+
+.finish2 {
+  height: 35px;
+  font-weight: bold;
+  margin-top: 40px;
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: linear-gradient(170deg, #f056dc, #9356DC);
+  color: white;
+  border: 0;
+  border-radius: 20px 20px;
+  box-shadow: 0 4px 8px #c0bebe;
+}
+
+.heart-v {
+  cursor: pointer;
+  font-weight: bold;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px #000000;
+  font-size: 17px;
+  transform: scale(0.9);
+  transition: transform 4s ease-in-out;
+}
+@media screen and (min-width: 769px) {
+  .heart-v {
+    font-size: 20px;
+  }
+}
+.heart-v:active {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 1px #f3f3f3;
+  background-image: linear-gradient(to bottom, #9356DC, #FF79DA);
+  animation: color-change 400ms forwards ease-in-out;
+}
+
+@keyframes color-change {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.button--valid {
+  display: inline-block;
+  width: 100%;
+  height: 60px;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0 4px 10px #d2d2d2;
+  background-color: white;
+  position: relative;
+  text-overflow: ellipsis;
+}
+@media screen and (min-width: 769px) {
+  .button--valid {
+    height: 65px;
+  }
+}
+.button--valid :active {
+  opacity: 0.96;
+  transition: 200ms;
+}
+
+.button--valid:active > .btn-2 {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 10px 10px 0;
+  height: 100%;
+  width: 60px;
+  background-color: #99E2D0;
+  color: white;
+  transform: scaleX(1);
+  transform-origin: right;
+  position: absolute;
+}
+.button--valid:active > .btn-2 .fa-check-circle {
+  color: white;
+  transform: rotate(360deg);
+}
+.button--valid .btn-2 {
+  transform: scaleX(0);
+  transition: transform 300ms ease-in-out;
+}
+.button--valid .fa-check-circle {
+  height: 55px;
+  line-height: 55px;
+  width: 100%;
+  text-align: center;
+  font-size: 17px;
+  color: transparent;
+  transform: rotate(0deg);
+  transition: transform 300ms ease-in-out;
+}
+@media screen and (min-width: 769px) {
+  .button--valid .fa-check-circle {
+    height: 65px;
+    line-height: 65px;
+  }
+}
+
+footer {
+  background-color: #343232;
+  padding: 15px;
+}
+@media screen and (min-width: 426px) {
+  footer {
+    padding: 20px;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 769px) {
+  footer {
+    padding: 25px;
+  }
+}
+footer h1 {
+  font-family: "Shrikhand", cursive;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-bottom: 8px;
+  color: white;
+}
+@media screen and (min-width: 426px) {
+  footer h1 {
+    padding-bottom: 10px;
+  }
+}
+@media screen and (min-width: 769px) {
+  footer h1 {
+    padding-bottom: 12px;
+  }
+}
+footer li {
+  padding-bottom: 5px;
+}
+@media screen and (min-width: 426px) {
+  footer li {
+    padding-bottom: 7px;
+  }
+}
+@media screen and (min-width: 769px) {
+  footer li {
+    padding-bottom: 10px;
+  }
+}
+footer .icon2 {
+  margin-right: 6px;
+}
+footer .icon3 {
+  margin-right: 3px;
+}
+footer a {
+  color: white;
+}
+
+/*# sourceMappingURL=menu.css.map */

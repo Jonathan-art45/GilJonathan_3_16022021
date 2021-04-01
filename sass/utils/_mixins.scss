@@ -1,0 +1,8 @@
+@mixin police-custom {
+  font-family: 'Shrikhand', cursive;
+  font-weight: bold;
+}
+
+@mixin text-light {
+  font-weight: 300;
+}

@@ -1,0 +1,665 @@
+@charset "UTF-8";
+/* Règles de dimensionnement des boîtes */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Retirer les marges par défaut */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Définir les défauts élémentaires du corps */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Retirer les styles de liste sur les éléments ul, ol qui ont un attribut class */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* Les éléments a qui n'ont pas de classes reçoivent les styles par défaut */
+a {
+  text-decoration: none;
+}
+
+/* Rendre l'utilisation d'images plus simple */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Cadence et rythme naturels pour les éléments enfants d'éléments article par défaut */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Hérite les règles typographiques pour les éléments input et button */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Retire toutes les animations et transition pour les personnes qui préfèrent ne pas les voir */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  font-size: 10px;
+}
+@media screen and (min-width: 426px) {
+  :root {
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 769px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  z-index: 999;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  background-color: white;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 300px 50px;
+  grid-gap: 20px;
+  animation: hiddenfinal 0.5s 2s linear forwards;
+}
+.container h1 {
+  font-family: "Shrikhand", cursive;
+  font-weight: bold;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to right, #f056dc, #9356DC, #99E2D0);
+}
+.container p {
+  font-size: 20px;
+  margin-top: 10px;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-color: #99E2D0;
+}
+
+.load {
+  position: relative;
+  height: 200px;
+  line-height: 200px;
+  width: 200px;
+  justify-self: center;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #f056dc, #9356DC, #99E2D0);
+}
+@media screen and (min-width: 769px) {
+  .load {
+    height: 300px;
+    width: 300px;
+    line-height: 300px;
+  }
+}
+
+.loader--quart {
+  border: 10px solid #f056dc;
+  border-radius: 50%;
+}
+@media screen and (min-width: 769px) {
+  .loader--quart {
+    border: 15px solid #f056dc;
+  }
+}
+
+.loader--quart::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  bottom: -10px;
+  right: -10px;
+  border: 10px solid transparent;
+  border-top: 10px solid #9356DC;
+  border-radius: 50%;
+  animation: spin 1s linear;
+}
+@media screen and (min-width: 769px) {
+  .loader--quart::after {
+    top: -15px;
+    left: -15px;
+    bottom: -15px;
+    right: -15px;
+    border: 15px solid transparent;
+    border-top: 15px solid #9356DC;
+  }
+}
+
+.my-icon {
+  font-size: 50px;
+  color: #9356DC;
+  animation: opac 1s 1s linear alternate;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes opac {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes hiddenfinal {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+body p {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+footer {
+  background-color: #343232;
+  padding: 15px;
+}
+@media screen and (min-width: 426px) {
+  footer {
+    padding: 20px;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 769px) {
+  footer {
+    padding: 25px;
+  }
+}
+footer h1 {
+  font-family: "Shrikhand", cursive;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-bottom: 8px;
+  color: white;
+}
+@media screen and (min-width: 426px) {
+  footer h1 {
+    padding-bottom: 10px;
+  }
+}
+@media screen and (min-width: 769px) {
+  footer h1 {
+    padding-bottom: 12px;
+  }
+}
+footer li {
+  padding-bottom: 5px;
+}
+@media screen and (min-width: 426px) {
+  footer li {
+    padding-bottom: 7px;
+  }
+}
+@media screen and (min-width: 769px) {
+  footer li {
+    padding-bottom: 10px;
+  }
+}
+footer .icon2 {
+  margin-right: 6px;
+}
+footer .icon3 {
+  margin-right: 3px;
+}
+footer a {
+  color: white;
+}
+
+.finish1 {
+  text-align: center;
+}
+
+.finish2 {
+  height: 35px;
+  font-weight: bold;
+  margin-top: 40px;
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: linear-gradient(170deg, #f056dc, #9356DC);
+  color: white;
+  border: 0;
+  border-radius: 20px 20px;
+  box-shadow: 0 4px 8px #c0bebe;
+}
+
+.heart-v {
+  cursor: pointer;
+  font-weight: bold;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px #000000;
+  font-size: 17px;
+  transform: scale(0.9);
+  transition: transform 4s ease-in-out;
+}
+@media screen and (min-width: 769px) {
+  .heart-v {
+    font-size: 20px;
+  }
+}
+.heart-v:active {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 1px #f3f3f3;
+  background-image: linear-gradient(to bottom, #9356DC, #FF79DA);
+  animation: color-change 400ms forwards ease-in-out;
+}
+
+@keyframes color-change {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.button--valid {
+  display: inline-block;
+  width: 100%;
+  height: 60px;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0 4px 10px #d2d2d2;
+  background-color: white;
+  position: relative;
+  text-overflow: ellipsis;
+}
+@media screen and (min-width: 769px) {
+  .button--valid {
+    height: 65px;
+  }
+}
+.button--valid :active {
+  opacity: 0.96;
+  transition: 200ms;
+}
+
+.button--valid:active > .btn-2 {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 10px 10px 0;
+  height: 100%;
+  width: 60px;
+  background-color: #99E2D0;
+  color: white;
+  transform: scaleX(1);
+  transform-origin: right;
+  position: absolute;
+}
+.button--valid:active > .btn-2 .fa-check-circle {
+  color: white;
+  transform: rotate(360deg);
+}
+.button--valid .btn-2 {
+  transform: scaleX(0);
+  transition: transform 300ms ease-in-out;
+}
+.button--valid .fa-check-circle {
+  height: 55px;
+  line-height: 55px;
+  width: 100%;
+  text-align: center;
+  font-size: 17px;
+  color: transparent;
+  transform: rotate(0deg);
+  transition: transform 300ms ease-in-out;
+}
+@media screen and (min-width: 769px) {
+  .button--valid .fa-check-circle {
+    height: 65px;
+    line-height: 65px;
+  }
+}
+
+header {
+  text-align: center;
+}
+header h1 {
+  font-family: "Shrikhand", cursive;
+  font-weight: bold;
+  padding: 8px;
+  font-size: 1.8rem;
+}
+header form {
+  background-color: #f3f3f3;
+  position: relative;
+}
+header form label {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-direction: row;
+  background-color: #dddcdc;
+  box-shadow: 0 2px 4px #c0bebe inset;
+}
+header form label input {
+  width: 200px;
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+}
+header form label .localisation {
+  font-size: 1.4rem;
+}
+header form div {
+  padding: 15px;
+}
+header form .place-t {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.4rem;
+}
+header form p {
+  margin: 20px;
+  font-size: 1.1rem;
+}
+header form button {
+  height: 35px;
+  font-weight: bold;
+  background: linear-gradient(170deg, #FF79DA, #9356DC);
+  color: white;
+  border: 0;
+  border-radius: 20px 20px;
+  box-shadow: 0 4px 8px #c0bebe;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 769px) {
+  header form button {
+    padding: 5px 12px;
+  }
+}
+header form button:hover {
+  box-shadow: 0 4px 8px #999999;
+  opacity: 0.95;
+  transition: 300ms;
+}
+
+.text-light {
+  font-weight: 300;
+}
+
+section {
+  padding: 15px;
+}
+@media screen and (min-width: 426px) {
+  section {
+    padding: 20px;
+  }
+}
+@media screen and (min-width: 769px) {
+  section {
+    padding: 25px;
+  }
+}
+section figcaption {
+  display: grid;
+  grid-template-columns: 2fr 30px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "title heart" "texte heart";
+}
+
+figcaption h2 {
+  grid-area: title;
+}
+figcaption p {
+  grid-area: texte;
+}
+figcaption div {
+  grid-area: heart;
+  justify-self: center;
+  align-self: center;
+  font-size: 1.3rem;
+}
+
+#functionment {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+#functionment h2 {
+  padding-bottom: 12px;
+  font-weight: bold;
+}
+@media screen and (min-width: 426px) {
+  #functionment h2 {
+    padding-bottom: 20px;
+    text-align: center;
+  }
+}
+#functionment ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
+@media screen and (min-width: 426px) {
+  #functionment ul {
+    justify-content: center;
+    grid-gap: 17px;
+    grid-template-columns: 340px;
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 769px) {
+  #functionment ul {
+    grid-gap: 23px;
+    grid-template-columns: 360px;
+  }
+}
+#functionment li {
+  display: flex;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 10px 10px 10px 10px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px #d2d2d2;
+  background-color: #f2f2f2;
+  position: relative;
+}
+#functionment li:hover {
+  box-shadow: 0 4px 10px #cccccc;
+  background-color: #f7f7f7;
+  transition: 300ms;
+  cursor: pointer;
+}
+#functionment .li-secondaire {
+  background-color: #ece1f9;
+}
+#functionment .li-secondaire:hover {
+  box-shadow: 0 4px 10px #d7c0f2;
+  background-color: #f2eafb;
+  cursor: pointer;
+}
+#functionment .icon1 {
+  font-size: 1.1rem;
+  margin-right: 30px;
+  margin-left: 30px;
+  line-height: 50px;
+}
+#functionment .cercle {
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+  border-radius: 50%;
+  color: white;
+  background-color: #9356DC;
+  position: absolute;
+  transform: translateX(calc(-15px / 2));
+  align-self: center;
+}
+@media screen and (min-width: 426px) {
+  #functionment .cercle {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 22px;
+    left: -10px;
+  }
+}
+@media screen and (min-width: 769px) {
+  #functionment .cercle {
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    border-radius: 22px;
+    left: -13px;
+  }
+}
+
+#menus {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #f3f3f3;
+}
+#menus .place-m {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px 200px 200px 200px;
+  grid-gap: 15px;
+}
+@media screen and (min-width: 426px) {
+  #menus .place-m {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 250px 250px;
+    grid-gap: 20px;
+  }
+}
+@media screen and (min-width: 769px) {
+  #menus .place-m {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 25px;
+  }
+}
+#menus h2 {
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+#menus a, #menus article {
+  height: 100%;
+}
+#menus figure {
+  border-radius: 15px;
+  box-shadow: 1px 1px 8px #c0bebe;
+  position: relative;
+  height: 100%;
+}
+#menus figure:hover {
+  box-shadow: 1px 1px 8px gray;
+  opacity: 0.95;
+  transition: 300ms;
+}
+#menus .new {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 6px 10px;
+  background-color: #99E2D0;
+  opacity: 0.85;
+  border-radius: 2px;
+  color: #227762;
+}
+#menus img {
+  height: calc(100% - 50px);
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+@media screen and (min-width: 426px) {
+  #menus img {
+    width: 100%;
+    height: calc(100% - 50px);
+  }
+}
+@media screen and (min-width: 769px) {
+  #menus img {
+    height: calc(100% - 60px);
+  }
+}
+#menus h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+#menus figcaption {
+  border-radius: 0 0 15px 15px;
+  padding: 5px;
+  height: 50px;
+}
+@media screen and (min-width: 769px) {
+  #menus figcaption {
+    height: 60px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

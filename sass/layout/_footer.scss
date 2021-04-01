@@ -1,0 +1,46 @@
+footer {
+  background-color: #343232;
+  padding: 15px;
+  @media screen and (min-width: 426px) {
+    padding: 20px;
+    text-align: center;
+  }
+  @media screen and (min-width: 769px) {
+    padding: 25px;
+  }
+
+  h1 {
+    @include police-custom;
+    font-size: 1.5rem;
+    padding-bottom: 8px;
+    color: white;
+    @media screen and (min-width: 426px) {
+      padding-bottom: 10px;
+    }
+    @media screen and (min-width: 769px) {
+      padding-bottom: 12px;
+    }
+  }
+
+  li {
+    padding-bottom: 5px;
+    @media screen and (min-width: 426px) {
+      padding-bottom: 7px;
+    }
+    @media screen and (min-width: 769px) {
+      padding-bottom: 10px;
+    }
+  }
+
+  .icon2 {
+    margin-right: 6px;
+  }
+
+  .icon3 {
+    margin-right: 3px;
+  }
+
+  a {
+    color: white;
+  }
+}

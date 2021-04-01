@@ -1,0 +1,290 @@
+header {
+  text-align: center;
+
+  h1 {
+    @include police-custom;
+    padding: 8px;
+    font-size: 1.8rem;
+  }
+
+  form {
+    background-color: #f3f3f3;
+    position: relative;
+
+    label {
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      flex-direction: row;
+      background-color: #dddcdc;
+      box-shadow: 0 2px 4px #c0bebe inset;
+
+      input {
+        width: 200px;
+        height: 100%;
+        text-align: center;
+        font-weight: bold;
+        border: 0;
+        padding: 0;
+        background-color: transparent;
+      }
+
+      .localisation {
+        font-size: 1.4rem;
+      }
+    }
+
+    div {
+      padding: 15px;
+    }
+
+    .place-t {
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+
+    p {
+      margin: 20px;
+      font-size: 1.1rem;
+    }
+
+    button {
+      height: 35px;
+      font-weight: bold;
+      background: linear-gradient(170deg, $color-secondary, $color-primary);
+      color: white;
+      border: 0;
+      border-radius: 20px 20px;
+      box-shadow: 0 4px 8px #c0bebe;
+      margin-bottom: 10px;
+      @media screen and (min-width: 769px) {
+        padding: 5px 12px;
+      }
+
+      &:hover {
+        box-shadow: 0 4px 8px hsl(0, 0%, 60%);
+        opacity: 0.95;
+        transition: 300ms;
+      }
+    }
+  }
+}
+
+.text-light {
+  @include text-light
+}
+
+section {
+  padding: 15px;
+  @media screen and (min-width: 426px) {
+    padding: 20px;
+  }
+  @media screen and (min-width: 769px) {
+    padding: 25px;
+  }
+
+  figcaption {
+    display: grid;
+    grid-template-columns: 2fr 30px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+  "title heart"
+  "texte heart";
+  }
+}
+
+figcaption {
+  h2 {
+    grid-area: title;
+  }
+
+  p {
+    grid-area: texte;
+  }
+
+  div {
+    grid-area: heart;
+    justify-self: center;
+    align-self: center;
+    font-size: 1.3rem;
+  }
+}
+
+#functionment {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  h2 {
+    padding-bottom: 12px;
+    font-weight: bold;
+    @media screen and (min-width: 426px) {
+      padding-bottom: 20px;
+      text-align: center;
+    }
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 15px;
+    @media screen and (min-width: 426px) {
+      justify-content: center;
+      grid-gap: 17px;
+      grid-template-columns: 340px;
+      grid-template-rows: repeat(3, 1fr);
+    }
+    @media screen and (min-width: 769px) {
+      grid-gap: 23px;
+      grid-template-columns: 360px;
+    }
+  }
+
+  li {
+    display: flex;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 10px 10px 10px 10px;
+    font-weight: 500;
+    box-shadow: 0 4px 10px #d2d2d2;
+    background-color: hsl(0, 0%, 95%);
+    position: relative;
+
+    &:hover {
+      box-shadow: 0 4px 10px hsl(0, 0%, 80%);
+      background-color: hsl(0, 0%, 97%);
+      transition: 300ms;
+      cursor: pointer;
+    }
+  }
+
+  .li-secondaire {
+    background-color: lighten($color-primary, 33%);
+
+    &:hover {
+      box-shadow: 0 4px 10px lighten($color-primary, 25);
+      background-color: lighten($color-primary, 35%);
+      cursor: pointer;
+    }
+  }
+
+  .icon1 {
+    font-size: 1.1rem;
+    margin-right: 30px;
+    margin-left: 30px;
+    line-height: 50px;
+  }
+
+  .cercle {
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+    background-color: $color-primary;
+    position: absolute;
+    transform: translateX(calc(-15px / 2));
+    align-self: center;
+    @media screen and (min-width: 426px) {
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      border-radius: 22px;
+      left: -10px;
+    }
+    @media screen and (min-width: 769px) {
+      width: 22px;
+      height: 22px;
+      line-height: 22px;
+      border-radius: 22px;
+      left: -13px;
+    }
+  }
+}
+
+#menus {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #f3f3f3;
+
+  .place-m {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 200px 200px 200px;
+    grid-gap: 15px;
+    @media screen and (min-width: 426px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 250px 250px;
+      grid-gap: 20px;
+    }
+    @media screen and (min-width: 769px) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+      grid-gap: 25px;
+    }
+  }
+
+  h2 {
+    padding-bottom: 10px;
+    font-weight: bold;
+  }
+
+  a, article {
+    height: 100%;
+  }
+
+  figure {
+    border-radius: 15px;
+    box-shadow: 1px 1px 8px #c0bebe;
+    position: relative;
+    height: 100%;
+
+    &:hover {
+      box-shadow: 1px 1px 8px hsl(0, 0%, 50%);
+      opacity: 0.95;
+      transition: 300ms;
+    }
+  }
+
+  .new {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 10px;
+    background-color: $color-tertiary;
+    opacity: 0.85;
+    border-radius: 2px;
+    color: hsl(165, 56%, 30%);
+  }
+
+  img {
+    height: calc(100% - 50px);
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    @media screen and (min-width: 426px) {
+      width: 100%;
+      height: calc(100% - 50px);
+    }
+    @media screen and (min-width: 769px) {
+      height: calc(100% - 60px);
+    }
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  figcaption {
+    border-radius: 0 0 15px 15px;
+    padding: 5px;
+    height: 50px;
+    @media screen and (min-width: 769px) {
+      height: 60px;
+    }
+  }
+}
