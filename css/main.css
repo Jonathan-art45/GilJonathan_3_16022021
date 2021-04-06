@@ -74,20 +74,6 @@ select {
     scroll-behavior: auto !important;
   }
 }
-:root {
-  font-size: 10px;
-}
-@media screen and (min-width: 426px) {
-  :root {
-    font-size: 13px;
-  }
-}
-@media screen and (min-width: 769px) {
-  :root {
-    font-size: 15px;
-  }
-}
-
 .container {
   height: 100vh;
   width: 100%;
@@ -206,6 +192,7 @@ select {
 body {
   font-family: "Roboto", sans-serif;
 }
+
 body p {
   font-size: 1rem;
 }
@@ -215,10 +202,27 @@ a {
   color: black;
 }
 
+:root {
+  font-size: 10px;
+}
+
+@media screen and (min-width: 426px) {
+  :root {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
 footer {
   background-color: #343232;
   padding: 15px;
 }
+
 @media screen and (min-width: 426px) {
   footer {
     padding: 20px;
@@ -371,6 +375,7 @@ footer a {
   transform: rotate(0deg);
   transition: transform 300ms ease-in-out;
 }
+
 @media screen and (min-width: 769px) {
   .button--valid .fa-check-circle {
     height: 65px;
@@ -378,9 +383,68 @@ footer a {
   }
 }
 
+.btn-1 {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  grid-template-rows: 50% 50%;
+  grid-template-areas: "titre ." "texte texte2";
+  cursor: pointer;
+  width: 100%;
+  transition: width 300ms;
+  padding: 6px;
+}
+
+.btn-1 h3 {
+  grid-area: titre;
+  align-self: center;
+}
+
+.btn-1 .place1 {
+  grid-area: texte;
+}
+
+.btn-1 .place2 {
+  grid-area: texte2;
+}
+
+@media screen and (min-width: 426px) {
+  .btn-1 {
+    padding: 8px;
+  }
+}
+
+@media screen and (min-width: 426px) {
+  .btn-1 {
+    padding: 8px 10px;
+  }
+}
+
+.btn-1:active {
+  width: calc(100% - 60px);
+}
+
+.place2 {
+  font-weight: bold;
+  justify-self: end;
+  align-self: end;
+}
+
+.place1 {
+  font-weight: 300;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  align-self: center;
+}
+
+input[type=radio] {
+  display: none;
+}
+
 header {
   text-align: center;
 }
+
 header h1 {
   font-family: "Shrikhand", cursive;
   font-weight: bold;
